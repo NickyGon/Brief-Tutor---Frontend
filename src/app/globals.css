@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #14161c;
+  --ink: #e8e6f0;
+  --card: #1e212b;
+  --line: #3a3e4c;
+  --teal: #3d7d8a;
+  --teal-deep: #b3a4d4;
+  --glow: #8ec9d4;
+  --violet: #8d7eb8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-source), "Segoe UI", sans-serif;
+  --font-display: var(--font-source), "Segoe UI", sans-serif;
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-teal: var(--teal);
+  --color-teal-deep: var(--teal-deep);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.glow-edge {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--glow) 42%, transparent),
+    0 0 14px 1px color-mix(in srgb, var(--violet) 20%, transparent);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-source), "Segoe UI", sans-serif;
 }
